@@ -1,0 +1,10 @@
+/* Shrink the first image, and distort the width of the second image. The bottom two images remain the same. */
+.avatar.proportioned {
+    width: 300px;
+    height: 300px;
+}
+
+.avatar.distorted {
+    width: 200px;
+    height: 300px;
+}

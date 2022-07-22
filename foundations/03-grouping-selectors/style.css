@@ -1,0 +1,15 @@
+/* Both share the properties of the same font type and size. */
+.btn-1, .btn-2 {
+    font-family: Helvetica, "Times New Roman", sans-serif;
+    font-size: 28px;
+}
+
+.btn-1 {
+    background-color: black;
+    color: white;
+}
+
+.btn-2 {
+    color: black;
+    background-color: yellow;
+}

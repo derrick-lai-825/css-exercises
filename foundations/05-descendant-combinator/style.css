@@ -1,0 +1,7 @@
+/* For the things that should be styled, are the Container class and its descendants text class. */ 
+.container .text {
+    color: red;
+    font-size: xx-large;
+    background-color: yellow;
+    text-align: center;
+}

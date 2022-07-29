@@ -26,3 +26,130 @@ body {
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
 }
+
+/*
+- The header text is size 32px and weight 900.
+- The header text is vertically centered and 16px from the edge of the screen.
+- The footer is pushed to the bottom of the screen (the footer may go _below_ the bottom of the screen if the content of the 'cards' section overflows and/or if your screen is shorter).
+- The footer text is centered horizontally and vertically.
+- The sidebar and cards take up all available space above the footer.
+- The sidebar is 300px wide (and it doesn't shrink).
+- The sidebar links are size 24px, are white, and do not have the underline text decoration.
+- The sidebar has 16px padding.
+- There is 32px padding around the 'cards' section.
+- The cards are arranged horizontally, but wrap to multiple lines when they run out of room on the page.
+*/
+
+/* */
+
+/* It Seems Like Since The Website Seems To Be Split Into 3 Main Parts, Let's Create A Flex Box For The Body */
+body {
+  display: flex;
+  flex-direction: column;
+
+  /* The Header Is On The Top, The Footer Is On The Bottom, And The Content Is In The Middle, So Justify Content Should Be SpaceBetween */
+  justify-content: space-between;
+}
+
+/*============================================================*/
+/* The Header Should Be Its Own Flexbox */
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; /* Vertically Center */
+
+  /* Font Size */
+  font-size: 32px;
+
+  /* Font Weight */
+  font-weight: 900;
+
+  /* Padding */
+  padding-left: 16px;
+}
+
+/*============================================================*/
+
+/* The Sidebar And Card Group Should Be Its Own Flexbox Since They Seem To Be In The Same Row */
+.container {
+  display: flex;
+
+  /* Since We Want The Container To Take Up The Rest Of The Space In The Center, Flex-Grow Seems To Be A Good Idea */
+  /* Since We Are Setting FlexGrow To The Only One Of The Items In The Body, It Will Take Up The Rest Of The Space */
+  flex-grow: 1;
+}
+
+.sidebar {
+  /* Sidebar Should Have 0 Shrink To Prevent The Cards From Smashing Onto It And In Addition, It Also Retains Its Size */
+  display: flex;
+  flex-shrink: 0;
+
+  width: 300px;
+  /* The Side Bar Has 16px Padding */
+  padding: 16px;
+
+}
+
+a {
+  /* The Side Bars Links Have 24px White Text Without Underline */
+  font-size: 24px;
+  color: white;
+}
+
+a:link {
+  /* The Links Should Have No Underlines */
+  text-decoration: none;
+}
+
+ul {
+  /* The List Has No Bullet Points It Has No Margin Or Padding Either */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  /* Add Some Margin To The List */
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: flex;
+
+  /* The Grid Flexbox Seems To Have A Justify Content Of Flex Start Since It Is Slightly On The Left, It Is Also Centered */
+  justify-content: flex-start;
+  align-items: center;
+
+  /* The Flexbox Also Seems To Have Be Wrapped */
+  flex-wrap: wrap;
+
+  /* There Is Also A Gap Between Each Card */
+  gap: 16px;
+
+  /* There Is Also Padding For The Card Container */
+  padding: 32px;
+}
+
+.card {
+  height: 300px;
+  width: 300px;
+
+  margin: 16px;
+  padding: 16px;
+}
+
+/*============================================================*/
+/* The Footer Is Its Own Flexbox */
+.footer {
+  display: flex; /* */
+
+  /* The Footer Is Also Horizontally And Vertically Aligned */
+  justify-content: center;
+  align-items: center;
+
+  /* Use span for the emoji so it is still inline? */
+}
+
+.heart {
+  color: red;
+}

@@ -25,3 +25,65 @@ input {
   width: 400px;
   margin-bottom: 16px;
 }
+
+/* The entire body should be a flexbox, where the justify content of space between */
+body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* The header should have its own flex box, its display should have a justify content of space between */
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 16px;
+}
+
+/* A flexbox should be created for each list too. In addition, the list don't have any bullet points, so they should be removed. */
+.left-links, .right-links  {
+
+  display: flex; /* When coverting to flex, it automatically changes the list to a row format by default, you can change it back with flex direction I guess. */
+  justify-content: center;
+  gap: 16px;
+
+  /* Remove Bullet Points */
+  list-style: none;
+
+  margin-right: 32px; /* Slight adjustments to fix this weird bug where the text goes a bit offscreen to the right. */
+  /* */
+
+}
+
+/* Padding For The Buttons */
+button {
+  padding: 8px 16px;
+}
+
+/* Remove Underline And Highlight From Links */
+a {
+  color: #666; /* Apparently the color is #666, or grey */
+  text-decoration: none;
+}
+
+/* A flexbox should also be created for the content. */
+.content {
+  flex: 1; /* Don't know what this does */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* We want to display the content as a column rather then the default row.
+  
+  */
+}
+
+/* As for the footer, it should be yet another flexbox, with the justify content of space between. */
+.footer {
+  display: flex;
+  justify-content: space-between;
+
+  /* Background Color */
+  background-color: #eeeeee;
+  
+}
